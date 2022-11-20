@@ -5,15 +5,6 @@ import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
-///
-/// Example:
-/// ```dart
-/// import 'firebase_options.dart';
-/// // ...
-/// await Firebase.initializeApp(
-///   options: DefaultFirebaseOptions.currentPlatform,
-/// );
-/// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -67,7 +58,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '424632456053',
     projectId: 'flutter-academy-app',
     storageBucket: 'flutter-academy-app.appspot.com',
-    iosClientId: '424632456053-73vc1tigk60vd3umf739ddm1ldl9o5vn.apps.googleusercontent.com',
+    iosClientId:
+        '424632456053-73vc1tigk60vd3umf739ddm1ldl9o5vn.apps.googleusercontent.com',
     iosBundleId: 'com.ahmnouira.flutteracademy.flutterAcademy',
   );
 
@@ -77,7 +69,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '424632456053',
     projectId: 'flutter-academy-app',
     storageBucket: 'flutter-academy-app.appspot.com',
-    iosClientId: '424632456053-73vc1tigk60vd3umf739ddm1ldl9o5vn.apps.googleusercontent.com',
+    iosClientId:
+        '424632456053-73vc1tigk60vd3umf739ddm1ldl9o5vn.apps.googleusercontent.com',
     iosBundleId: 'com.ahmnouira.flutteracademy.flutterAcademy',
   );
 }
