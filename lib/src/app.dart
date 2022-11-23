@@ -10,30 +10,14 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Academy',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.indigo),
-      routes: {
-        '/': (_) => const HomeScreen(),
-        '/about': (_) => const AboutScreen(),
-        '/contact': (_) => const ContactScreen(),
-        '/courses': (_) => const CoursesScreen(),
-      },
-      home: Scaffold(
-        appBar: AppBar(
-          actions: (MediaQuery.of(context).size.width <= 400)
-              ? null
-              : [
-                  TextButton(
-                      onPressed: () => Navigator.pushNamed(context, '/'),
-                      child: const Text('Home')),
-                  TextButton(
-                      onPressed: () => Navigator.pushNamed(context, 'about'),
-                      child: const Text('About'))
-                ],
-          title: const Text("FlutterAcademy"),
-        ),
-      ),
-    );
+        title: 'Flutter Academy',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(primarySwatch: Colors.indigo),
+        routes: {
+          '/about': (_) => const AboutScreen(),
+          '/contact': (_) => const ContactScreen(),
+          '/courses': (_) => const CoursesScreen(),
+        },
+        home: const HomeScreen());
   }
 }
