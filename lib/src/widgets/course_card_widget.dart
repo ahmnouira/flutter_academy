@@ -19,7 +19,7 @@ class CourseCardWidget extends StatelessWidget {
     return SizedBox(
       width: 350.0,
       child: Card(
-          // To the whole card clickable.
+          // To the whole card clickable
           child: InkWell(
         onTap: onPressed,
         child: Column(children: [

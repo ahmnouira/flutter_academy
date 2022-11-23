@@ -5,6 +5,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('HomeScreen');
+    return Scaffold(
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          AppBar(
+            title: const Text("Flutter Academy"),
+            // elevation: 0,
+          )
+        ],
+      ),
+    );
   }
 }
