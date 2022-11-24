@@ -19,24 +19,29 @@ class CourseCardWidget extends StatelessWidget {
     return SizedBox(
       width: 350.0,
       child: Card(
+          clipBehavior: Clip.antiAlias,
           // To the whole card clickable
           child: InkWell(
-        onTap: onPressed,
-        child: Column(children: [
-          Image.asset(
-            image,
-            height: 250,
-          ),
-          const SizedBox(
-            height: 10.0,
-          ),
-          Text(title, style: Theme.of(context).textTheme.headline4),
-          const SizedBox(
-            height: 10.0,
-          ),
-          Text(description)
-        ]),
-      )),
+            onTap: onPressed,
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Image.asset(
+                    image,
+                    height: 250,
+                    fit: BoxFit.cover,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(title,
+                        style: Theme.of(context).textTheme.headline4),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(description),
+                  )
+                ]),
+          )),
     );
   }
 }
