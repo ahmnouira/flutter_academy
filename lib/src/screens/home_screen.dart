@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_academy/src/data/assets.dart';
 import 'package:flutter_academy/src/widgets/header_widget.dart';
 
-// Dating95'-99'
+import '../widgets/course_card_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -36,8 +37,25 @@ class HomeScreen extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                Container()
                 // Add course cards
+                const SizedBox(width: 20.0),
+                CourseCardWidget(
+                  title: "Taking Flutter to Web",
+                  description:
+                      "Flutter web is stable. But there are no proper courses focused on Flutter web. So in this course we will learn what Flutter web is good for and we will build a production grade application along the way.",
+                  image: Assets.course,
+                  onPressed: () {},
+                ),
+
+                const SizedBox(
+                  width: 20.0,
+                ),
+                CourseCardWidget(
+                    image: Assets.course,
+                    title: "Flutter for Everyone",
+                    description:
+                        "Flutter beginners's course for everyone. For those wko know basic programing, can easily start developing",
+                    onPressed: () {}),
               ],
             ),
           )
