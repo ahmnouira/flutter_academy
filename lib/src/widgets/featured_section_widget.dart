@@ -20,7 +20,8 @@ class FeaturedSectionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1340,
+      // width: 1340,
+      color: Colors.grey.shade100,
       padding: const EdgeInsets.all(32.0),
       child: Row(children: [
         if (imageLeft)
@@ -53,9 +54,6 @@ class FeaturedSectionWidget extends StatelessWidget {
             )
           ],
         )),
-        const SizedBox(
-          width: 20.0,
-        ),
         if (!imageLeft)
           Expanded(
               child: Image.asset(

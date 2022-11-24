@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_academy/src/data/assets.dart';
+import 'package:flutter_academy/src/widgets/call_to_action_widget.dart';
 import 'package:flutter_academy/src/widgets/featured_section_widget.dart';
+import 'package:flutter_academy/src/widgets/footer_widget.dart';
 import 'package:flutter_academy/src/widgets/header_widget.dart';
 
 import '../widgets/course_card_widget.dart';
@@ -20,21 +22,15 @@ class HomeScreen extends StatelessWidget {
             // elevation: 0,
           ),
           const HeaderWidget(),
-          const SizedBox(
-            height: 40.0,
-          ),
           Padding(
-            padding: const EdgeInsets.only(left: 20.0),
+            padding: const EdgeInsets.all(20.0),
             child: Text(
               "Recent Courses",
               style: Theme.of(context).textTheme.headline3,
             ),
           ),
-          const SizedBox(
-            height: 10.0,
-          ),
           SizedBox(
-            height: 450,
+            height: 500,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
@@ -60,6 +56,9 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(
+            height: 20.0,
+          ),
           Center(
             child: FeaturedSectionWidget(
               image: Assets.instructor,
@@ -72,14 +71,27 @@ class HomeScreen extends StatelessWidget {
           ),
           Center(
             child: FeaturedSectionWidget(
+              imageLeft: false,
               image: Assets.instructor,
-              buttonLabel: 'Start learning ',
               description:
                   'Eduction changes your life beyond your imagination. Eduction enables you to achieve your dreams',
               onPressed: () {},
               title: "Transform your life through education",
+              buttonLabel: 'Start learning',
             ),
           ),
+          const CallToActionWidget(),
+          Center(
+            child: FeaturedSectionWidget(
+              image: Assets.instructor,
+              title: "Know your instructors",
+              description:
+                  "Know you instructors. We have chosen the best of them of give you hightest quality courses.",
+              buttonLabel: "Browse",
+              onPressed: () {},
+            ),
+          ),
+          const FooterWidget()
         ],
       ),
     );

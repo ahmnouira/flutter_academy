@@ -20,6 +20,7 @@ class CourseCardWidget extends StatelessWidget {
       width: 350.0,
       child: Card(
           clipBehavior: Clip.antiAlias,
+          elevation: 2,
           // To the whole card clickable
           child: InkWell(
             onTap: onPressed,

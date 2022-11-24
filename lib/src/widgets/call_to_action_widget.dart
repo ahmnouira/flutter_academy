@@ -6,7 +6,7 @@ class CallToActionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 40.0),
+      // margin: const EdgeInsets.only(top: 40.0),
       color: Colors.grey.shade200,
       height: 400,
       alignment: Alignment.center,
