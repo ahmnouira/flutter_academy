@@ -5,15 +5,17 @@ class FeaturedSectionWidget extends StatelessWidget {
   final String title;
   final String description;
   final String buttonLabel;
+  final bool imageLeft;
   final void Function()? onPressed;
 
   const FeaturedSectionWidget(
       {super.key,
-      required this.image,
       required this.title,
       required this.description,
       required this.buttonLabel,
-      required this.onPressed});
+      required this.onPressed,
+      required this.image,
+      this.imageLeft = true});
 
   @override
   Widget build(BuildContext context) {
@@ -21,32 +23,45 @@ class FeaturedSectionWidget extends StatelessWidget {
       width: 1340,
       padding: const EdgeInsets.all(32.0),
       child: Row(children: [
-        Expanded(
-          child: Image.asset(
-            image,
-            height: 450,
+        if (imageLeft)
+          Expanded(
+            child: Image.asset(
+              image,
+              height: 450,
+            ),
           ),
-        ),
         const SizedBox(
           width: 20.0,
         ),
         Expanded(
             child: Column(
           children: [
-            Text(
-              title,
-              style: Theme.of(context).textTheme.headline3,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20.0),
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.headline3,
+              ),
             ),
-            const SizedBox(
-              height: 20.0,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: Text(description),
             ),
-            Text(description),
-            const SizedBox(
-              height: 10.0,
-            ),
-            ElevatedButton(onPressed: onPressed, child: Text(buttonLabel))
+            Center(
+              child: ElevatedButton(
+                  onPressed: onPressed, child: Text(buttonLabel)),
+            )
           ],
-        ))
+        )),
+        const SizedBox(
+          width: 20.0,
+        ),
+        if (!imageLeft)
+          Expanded(
+              child: Image.asset(
+            image,
+            height: 450,
+          ))
       ]),
     );
   }

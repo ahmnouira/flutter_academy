@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_academy/src/data/assets.dart';
+import 'package:flutter_academy/src/widgets/featured_section_widget.dart';
 import 'package:flutter_academy/src/widgets/header_widget.dart';
 
 import '../widgets/course_card_widget.dart';
@@ -58,7 +59,27 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () {}),
               ],
             ),
-          )
+          ),
+          Center(
+            child: FeaturedSectionWidget(
+              image: Assets.instructor,
+              buttonLabel: 'Become an instructor',
+              description:
+                  "Instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.",
+              onPressed: () {},
+              title: 'Start teaching today',
+            ),
+          ),
+          Center(
+            child: FeaturedSectionWidget(
+              image: Assets.instructor,
+              buttonLabel: 'Start learning ',
+              description:
+                  'Eduction changes your life beyond your imagination. Eduction enables you to achieve your dreams',
+              onPressed: () {},
+              title: "Transform your life through education",
+            ),
+          ),
         ],
       ),
     );
